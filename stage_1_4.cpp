@@ -4,8 +4,8 @@
 //
 //int main(void)
 //{
-//	int a, b; 
+//	int a, b;
 //	cin >> a >> b;
-//	cout << a + b;
+//	cout << a - b;
 //	return 0;
 //}
