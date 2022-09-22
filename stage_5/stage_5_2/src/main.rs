@@ -1,13 +1,22 @@
 fn main() {
-    let mut array: [i32; 3] = [0; 3];
-    
-    array[1] = 1;
-    array[2] = 2;
-    
-    assert_eq!([1, 2], &array[1..]);
-    
-    // This loop prints: 0 1 2
-    for x in array {
-        print!("{x} ");
+    let mut arr = Vec::new();
+    let mut a:i32 = 0;
+    for x in 1..10000 {
+        arr.push(x);
     }
+    for x in 1..10001 {
+        a = d(x as i32);
+        if a >= 10000{
+            continue;
+        }
+        arr.retain(|&x| x != a);
+    }   
+    for x in &arr {
+        println!("{x}");
+    }
+}
+
+fn d(n:i32) -> i32{
+    let b =  n + ((n / 1000) % 10) + ((n / 100) % 10) + ((n / 10) % 10) + (n % 10);
+    return b;
 }
